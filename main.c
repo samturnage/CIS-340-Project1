@@ -15,9 +15,14 @@ int main(void)
         node->prev = temp; //link to previous node
     }
 
+    printf("List before sort: \n");
     printlist(list);
+
     list = quicksort(list);
+
+    printf("List after sort: \n");
     printlist(list);
+
     freelist(list);
    
     return 0;

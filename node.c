@@ -11,11 +11,16 @@ void printlist(struct mynode *head)
 {
     struct mynode *node;
     node = head;
+    int i;
 
-    while (node->next) {
-        printf("%d\n", node->value);
+    for (i=1; node->next; i++) {
+        printf("%3d ", node->value);
         node = node->next;     
+        if (i % 20 == 0) {
+            printf("\n");
+        }
     }
+    printf("\n");
 }
 
 void freelist(struct mynode *head)
