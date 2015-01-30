@@ -4,7 +4,6 @@
 
 struct mynode* quicksort(struct mynode *head)
 {
-    struct mynode *pivot, *left, *right;
     return head;
 }
 
