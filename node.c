@@ -9,8 +9,7 @@ struct mynode* quicksort(struct mynode *head)
 
 void printlist(struct mynode *head)
 {
-    struct mynode *node;
-    node = head;
+    struct mynode *node = head;
     int i;
 
     for (i=1; node->next; i++) {
