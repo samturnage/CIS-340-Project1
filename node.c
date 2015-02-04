@@ -13,10 +13,10 @@ struct mynode* quicksort(struct mynode *head)
     {
         return head;
     }   
-	hopefully this will fix something, I have no way of compiling any of this so let me know
+    hopefully this will fix something, I have no way of compiling any of this so let me know
 	
-	I compiled and ran with the above code and it froze my computer, so something weird is 
-	going on. -Derek
+    I compiled and ran with the above code and it froze my computer, so something weird is 
+    going on. -Derek
 	
     Also I think the below code would create a node with no value in it, and then later pass
     a list with a dummy node in it. Maybe create the node first in l_current, add a value in
