@@ -1,4 +1,4 @@
-#ifdef __NODE_H__
+#ifndef __NODE_H__
 #define __NODE_H__
 //mynode struct
 //header for a node struct whitch holds a single integer and two pointers to other nodes
