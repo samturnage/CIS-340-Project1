@@ -24,6 +24,17 @@ struct mynode* quicksort(struct mynode *head)
     good luck,	
     -Sam
     */
+    
+    /*
+    If the value of head is null it will just return it to save time
+    This is what you were talking about, right Sam?
+    Unfortunatly it doesn't fix the Segmentation fault
+    -James
+    */
+    if (!head) { 
+    	return head;
+    }
+    
     int pivot = head->value;
     struct mynode *current, *left, *right, *l_current, *r_current;
     left = (struct mynode *)malloc(sizeof(struct mynode));
@@ -46,6 +57,7 @@ struct mynode* quicksort(struct mynode *head)
     left = quicksort(left);
     right = quicksort(right);
 
+    //Could this be causing the Segmentation Fault?
     for (current=left; current; current=current->next) {	
     }
 
