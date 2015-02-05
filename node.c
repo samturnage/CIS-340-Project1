@@ -42,6 +42,9 @@ struct mynode* quicksort(struct mynode *head)
     l_current = left;
     r_current = right;
 
+    //This loop is completely broken. I went through it with a debugger and it never exits and eventually causes a
+    //segmentation fault. -James
+    //I am going to try to rewrite it today, but I'm not going to push any of my changes unless I get it working
     for (current=head; current; current=current->next) {
         if (current->value < pivot) {
             l_current->value = current->value;
