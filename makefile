@@ -1,5 +1,5 @@
 cc = gcc
-cc_flags = -c -Wall
+cc_flags = -std=gnu99 -c -g -Wall -I
 
 all: main
 
