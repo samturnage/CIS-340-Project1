@@ -9,4 +9,4 @@ Compilation:
 Sample Run:
 
 Bugs:
-    N/A
+    Segmentation fault while quicksorting
