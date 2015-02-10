@@ -1,16 +1,17 @@
-cc = gcc
-cc_flags = -std=gnu99 -c -g -Wall -I
+CC = gcc
+CFLAGS = -std=gnu99 -Wall -g -I.
+DEPS = node.h
+OBJ = main.c node.c
 
-all: main
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-main: main.o node.o
-	$(cc) main.o node.o -o main
+main: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
-main.o: main.c
-	$(cc) $(cc_flags) main.c 
+run:
+	./main
 
-node.o: node.c
-	$(cc) $(cc_flags) node.c 
-
+.PHONY: clean
 clean:
-	$(RM) *.o main
+	rm -f *.o *~ main
