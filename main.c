@@ -21,6 +21,7 @@ int main(void)
     //populate a list of integers using input and the head of the linked list
     //stops if an input value is 0
     int entered;
+    //Probably not the best way for an infinte loop
     while (1 == 1) {
         scanf("%d", &(entered));
         
@@ -29,15 +30,18 @@ int main(void)
         node->value = entered;
         node->next = last;
         temp = node;
+        
+        //Break out when it see's a 0. What's the best way to make this the loop condition
+        //An infinte loop with a break isn't very pretty
         if (temp->value == 0) {
             break;
         }
 
     }
     
+    //For some reason it adds an extra 0 to the list. This removes that 0
     list = list->next;
 
-    
     printf("List before sort: \n");
     printlist(list);
     
