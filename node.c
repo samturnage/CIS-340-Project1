@@ -5,67 +5,40 @@
 
 //quicksort method
 //takes one node pointer and recursively sorts in acending order, returning the head node
-struct mynode* quicksort(struct mynode *head)
+struct mynode* quicksort(struct mynode **head, struct mynode *last)
 {
-    /*
-    I'm pretty sure we need a case where only one node is being passed
-    if(head->next == NULL)
-    {
-        return head;
-    }   
-    hopefully this will fix something, I have no way of compiling any of this so let me know
-	
-    I compiled and ran with the above code and it froze my computer, so something weird is 
-    going on. -Derek
-	
-    Also I think the below code would create a node with no value in it, and then later pass
-    a list with a dummy node in it. Maybe create the node first in l_current, add a value in
-    it, and then later ignore the first node in Left. Hopefully that make sense.
-    good luck,	
-    -Sam
-    */
+    int intPivot;
+    struct mynode *pivot = *head;
+    intPivot = pivot->value;
     
-    /*
-    If the value of head is null it will just return it to save time
-    This is what you were talking about, right Sam?
-    Unfortunatly it doesn't fix the Segmentation fault
-    -James
-    */
-    if (!head) { 
-    	return head;
-    }
+    struct mynode *current=pivot->next;
+    struct mynode *previous = pivot;
+    struct mynode *temp;
     
-    int pivot = head->value;
-    struct mynode *current, *left, *right, *l_current, *r_current;
-    left = (struct mynode *)malloc(sizeof(struct mynode));
-    right = (struct mynode *)malloc(sizeof(struct mynode));
-    l_current = left;
-    r_current = right;
 
-    //This loop is completely broken. I went through it with a debugger and it never exits and eventually causes a
-    //segmentation fault. -James
-    //I am going to try to rewrite it today, but I'm not going to push any of my changes unless I get it working
-    for (current=head; current; current=current->next) {
-        if (current->value < pivot) {
-            l_current->value = current->value;
-            l_current->next = (struct mynode *)malloc(sizeof(struct mynode));
-            l_current = l_current->next;
-        } else {
-            r_current->value = current->value;
-            r_current->next = (struct mynode *)malloc(sizeof(struct mynode));
-            r_current = r_current->next;
+    if (*head == last) {
+        return 0;
+    } else {
+        while (current != last) {
+            if (current->value <= intPivot) {
+                temp = current->next;
+                current->next = *head;
+                previous->next = temp;
+                *head = current;
+                current = temp;
+            } else {
+                previous = current;
+                current = current->next;
+            }
         }
     }
+ 
+    
+    quicksort(head, pivot);
+    quicksort(&pivot->next, last);
+    
+    return *head;
 
-    left = quicksort(left);
-    right = quicksort(right);
-
-    //Could this be causing the Segmentation Fault?
-    for (current=left; current; current=current->next) {	
-    }
-
-    current->next = right;
-    return left;
 }
 
 //printlist method
