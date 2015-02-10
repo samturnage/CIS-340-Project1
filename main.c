@@ -14,23 +14,35 @@ Description:    Accepts a number of integers, creates a doubly linked list, and 
 //main method
 int main(void)
 {
-    struct mynode *list = (struct mynode *)malloc(sizeof(struct mynode)); //head of linked list
-    struct mynode *node = list, *temp; //used to traverse linked list
-        
+    struct mynode *list = (struct mynode *)malloc(sizeof(struct mynode)); //(struct mynode *)malloc(sizeof(struct mynode)); //head of linked list
+    struct mynode *node = list, *temp = node; //used to traverse linked list
+    struct mynode *last = (struct mynode *)malloc(sizeof(struct mynode));
+      
     //populate a list of integers using input and the head of the linked list
     //stops if an input value is 0
-    while (temp->value != 0) {
-        scanf("%d", &(node->value));
-        node->next = (struct mynode *)malloc(sizeof(struct mynode)); //create new node
-        temp = node; //temp references current node
-        node = node->next; //advance current node to next
-        node->prev = temp; //link to previous node
+    int entered;
+    while (1 == 1) {
+        scanf("%d", &(entered));
+        
+        node->next = (struct mynode *)malloc(sizeof(struct mynode));
+        node = node->next;
+        node->value = entered;
+        node->next = last;
+        temp = node;
+        if (temp->value == 0) {
+            break;
+        }
+
     }
+    
+    list = list->next;
+
     
     printf("List before sort: \n");
     printlist(list);
+    
     //sort the list
-    list = quicksort(list);
+    list = quicksort(&list, last);
 
     printf("List after sort: \n");
     printlist(list);
