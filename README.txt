@@ -5,8 +5,12 @@ Member Contributions:
     James Doherty - 33%
     Samuel Turnage - 33%
 Compilation:
-  
+    100% works
 Sample Run:
-
+    4 5 2 6 7 2 0
+    List before sort: 
+    4   5   2   6   7   2   0 
+    List after sort: 
+    0   2   2   4   5   6   7 
 Bugs:
-    Segmentation fault while quicksorting
+    none
