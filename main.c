@@ -15,25 +15,19 @@ Description:    Accepts a number of integers, creates a doubly linked list, and 
 int main(void)
 {
     struct mynode *list = (struct mynode *)malloc(sizeof(struct mynode)); //(struct mynode *)malloc(sizeof(struct mynode)); //head of linked list
-    struct mynode *node = list, *temp = node; //used to traverse linked list
+    struct mynode *node = list; //used to traverse linked list
     struct mynode *last = (struct mynode *)malloc(sizeof(struct mynode));
       
     //populate a list of integers using input and the head of the linked list
     //stops if an input value is 0
-    int entered;
+    int entered = 1;
     //Probably not the best way for an infinte loop
-    while(1){
+    while(entered){
         scanf("%d", &(entered));
-        
         node->next = (struct mynode *)malloc(sizeof(struct mynode));
         node = node->next;
         node->value = entered;
         node->next = last;
-        temp = node;
-        if(temp->value == 0)
-        {
-                        break;
-        }
     }
     
     //For some reason it adds an extra 0 to the list. This removes that 0

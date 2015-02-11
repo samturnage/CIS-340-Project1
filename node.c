@@ -5,6 +5,7 @@
 
 //quicksort method
 //takes one node pointer and recursively sorts in acending order, returning the head node
+//this function definition is not what is specified for the assignment - Derek
 struct mynode* quicksort(struct mynode **head, struct mynode *last)
 {
     int intPivot;
