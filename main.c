@@ -22,7 +22,7 @@ int main(void)
     //stops if an input value is 0
     int entered;
     //Probably not the best way for an infinte loop
-    do {
+    while(1){
         scanf("%d", &(entered));
         
         node->next = (struct mynode *)malloc(sizeof(struct mynode));
@@ -30,7 +30,11 @@ int main(void)
         node->value = entered;
         node->next = last;
         temp = node;
-    }while(temp->value == 0);
+        if(temp->value == 0)
+        {
+                        break;
+        }
+    }
     
     //For some reason it adds an extra 0 to the list. This removes that 0
     list = list->next;
