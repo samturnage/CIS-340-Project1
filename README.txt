@@ -1,6 +1,9 @@
 I'm workin on a solution for the quicksort right now. Things look good and its almost done. It's only sorting half at the moment. I can push what I have if you want, let me know
 -Sam
 
+I think the best way is deriving the last node within the quicksort function and removing the last variable from what gets passed in. That way the quicksort still works the same and we only pass one argument. 
+-James
+
 Description:  
     Creates a doubly linked list from input integer values then sorts them using a quicksort, prints the list before and after
 Member Contributions:
