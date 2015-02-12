@@ -1,3 +1,6 @@
+I'm workin on a solution for the quicksort right now. Things look good and its almost done. It's only sorting half at the moment. I can push what I have if you want, let me know
+-Sam
+
 Description:  
     Creates a doubly linked list from input integer values then sorts them using a quicksort, prints the list before and after
 Member Contributions:
