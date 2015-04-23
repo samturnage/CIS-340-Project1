@@ -1,15 +1,19 @@
+oops.
+-Sam
 
 Description:  
-    A program that allows the user to access a remote floppy image and pull and interret information from it.
-    
+    Creates a doubly linked list from input integer values then sorts them using a quicksort, prints the list before and after
 Member Contributions:
-    Turnage, Samuel		s.turnage@vikes.csuohio.edu     50%
-	Aring, Danielle	    D.ARING@vikes.csuohio.edu       50%
-	
+    Derek Morey - 34%
+    James Doherty - 33%
+    Samuel Turnage - 33%
 Compilation:
-    $make
-    
+    100% works
 Sample Run:
-
+    4 5 2 6 7 2 0
+    List before sort: 
+    4   5   2   6   7   2   0 
+    List after sort: 
+    0   2   2   4   5   6   7 
 Bugs:
-    
+    Passes in two values, head and last, rather than just one.
